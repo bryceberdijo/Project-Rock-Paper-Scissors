@@ -52,8 +52,7 @@ function playRound(computerAnswer, humanAnswer) {
 
 }
 
-const playerSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+
 
 console.log(playerSelection);
 console.log(computerSelection);
@@ -62,19 +61,20 @@ console.log(computerSelection);
 
 function playGame() {
 
-    const roundplayerScore = playerScore;
-    const roundcomputerScore = computerScore;
+const playerSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
 
     do {
         playRound(computerSelection, playerSelection)
 
     }
-    while (roundcomputerScore != 0 || roundplayerScore != 0)
+    while (computerScore != 0 || playerScore != 0)
 
-    if (roundcomputerScore == 5) {
+    if (computerScore == 5) {
         console.log("The clanker wins")
     } 
-    else if (roundplayerScore == 5) {
+    else if (playerScore == 5) {
         console.log("the human winds")
     }
 
