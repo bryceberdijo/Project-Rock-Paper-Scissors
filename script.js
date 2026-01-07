@@ -17,7 +17,7 @@ function getComputerChoice (){
         return "scissor"
 }
 
-console.log(randomNumber + " " + getComputerChoice())
+
 
 function getHumanChoice() {
     let playerAnswerUnedited = prompt('what is your choice' )
@@ -51,31 +51,27 @@ function playRound(computerAnswer, humanAnswer) {
     }
 
 }
-
-
-
-console.log(playerSelection);
-console.log(computerSelection);
-
-
-
+    
 function playGame() {
 
-const playerSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+while (computerScore < 5 || playerScore < 5) {
 
+    const playerSelection = getHumanChoice();
+    
+    const computerSelection = getComputerChoice();
 
-    do {
-        playRound(computerSelection, playerSelection)
+    playRound(computerSelection, playerSelection);
+}
 
-    }
-    while (computerScore != 0 || playerScore != 0)
-
-    if (computerScore == 5) {
-        console.log("The clanker wins")
-    } 
-    else if (playerScore == 5) {
-        console.log("the human winds")
-    }
+if (computerScore == 5){
+    console.log("the clanker wins");
+}
+else if (playerScore == 5){
+    console.log("the human wins");
+}
 
 }
+
+
+playGame()
+
