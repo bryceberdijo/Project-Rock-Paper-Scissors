@@ -8,3 +8,5 @@ January 7 (11:06pm) - I have finished working on script.js, which means I have m
 June 9 (12:54am) - after a hectic 2nd semester where the majority of my class dropped the calculus class, I am able to return back to the Odin Project to Finish up what I should have finished. The only problem is that I can't directly access Git anymore.
 
 June 9 (1:01am) - Good news, I have it now working again
+
+June 9 (1:01am) - Notice me Alexi (Roth Luis Canamo) senpai and Amiel (Abadilla) Senpai!!! >.<
