@@ -59,26 +59,3 @@ function playRound(computerAnswer, humanAnswer) {
 
 }
     
-function playGame() {
-
-while (computerScore < 5 && playerScore < 5) {
-    const computerSelection = getComputerChoice();
-    console.log(computerSelection);
-    const playerSelection = getHumanChoice();
-    console.log(playerSelection)
- 
-
-    playRound(computerSelection, playerSelection);
-}
-
-
-if (computerScore === 5){
-    console.log("the clanker wins");
-}
-else if (playerScore === 5){
-    console.log("the human wins");
-}
-
-}
-
-playGame()
