@@ -1,6 +1,9 @@
 let playerScore = 0;
 let computerScore = 0;
 
+const PlayerRock = document.querySelector("#rock");
+const PlayerPaper = document.querySelector("#paper");
+const PlayerScissor = document.querySelector("#scissor");
 
 function getComputerChoice (){
     let randomNumber = Math.floor(Math.random()*100) + 1;
@@ -58,4 +61,9 @@ function playRound(computerAnswer, humanAnswer) {
     }
 
 }
-    
+
+PlayerRock.addEventListener(playRound(getComputerChoice(),'rock'))
+
+
+
+
