@@ -11,6 +11,9 @@ const PlayerScoreboard = document.createElement("p")
 PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`
 Scoreboard.appendChild(PlayerScoreboard)
 
+const ComputerScoreboard = document.createElement("p")
+ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`
+Scoreboard.appendChild(ComputerScoreboard)
 
 
 
@@ -21,6 +24,7 @@ PlayerRock.addEventListener("click", function (){
     playRound(computerAnswer, "rock")
     
     PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`
+    ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`
 })
 
 PlayerPaper.addEventListener("click", function (){
@@ -29,6 +33,7 @@ PlayerPaper.addEventListener("click", function (){
     playRound(computerAnswer, "paper")
     
     PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`
+    ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`
 })
 
 PlayerScissor.addEventListener("click", function (){
@@ -37,6 +42,7 @@ PlayerScissor.addEventListener("click", function (){
     playRound(computerAnswer, "scissor")
     
     PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`
+    ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`
 })
 
 
