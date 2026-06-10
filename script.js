@@ -6,6 +6,44 @@ const PlayerPaper = document.querySelector("#paper");
 const PlayerScissor = document.querySelector("#scissor");
 const Scoreboard = document.querySelector("#score")
 
+
+const PlayerScoreboard = document.createElement("p")
+PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`
+Scoreboard.appendChild(PlayerScoreboard)
+
+
+
+
+
+PlayerRock.addEventListener("click", function (){
+    let computerAnswer = getComputerChoice()
+    console.log(computerAnswer)
+    playRound(computerAnswer, "rock")
+    
+    PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`
+})
+
+PlayerPaper.addEventListener("click", function (){
+    let computerAnswer = getComputerChoice()
+    console.log(computerAnswer)
+    playRound(computerAnswer, "paper")
+    
+    PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`
+})
+
+PlayerScissor.addEventListener("click", function (){
+    let computerAnswer = getComputerChoice()
+    console.log(computerAnswer)
+    playRound(computerAnswer, "scissor")
+    
+    PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`
+})
+
+
+
+
+
+
 function getComputerChoice (){
     let randomNumber = Math.floor(Math.random()*100) + 1;
 
@@ -63,13 +101,6 @@ function playRound(computerAnswer, humanAnswer) {
 
 }
 
-const PlayerScoreboard = document.createElement("p")
-PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`
-Scoreboard.appendChild(PlayerScoreboard)
-
-
-
-PlayerRock.addEventListener(playRound(getComputerChoice(),'rock'))
 
 
 
