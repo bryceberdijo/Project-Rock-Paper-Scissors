@@ -4,6 +4,7 @@ let computerScore = 0;
 const PlayerRock = document.querySelector("#rock");
 const PlayerPaper = document.querySelector("#paper");
 const PlayerScissor = document.querySelector("#scissor");
+const Scoreboard = document.querySelector("#score")
 
 function getComputerChoice (){
     let randomNumber = Math.floor(Math.random()*100) + 1;
@@ -61,6 +62,12 @@ function playRound(computerAnswer, humanAnswer) {
     }
 
 }
+
+const PlayerScoreboard = document.createElement("p")
+PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`
+Scoreboard.appendChild(PlayerScoreboard)
+
+
 
 PlayerRock.addEventListener(playRound(getComputerChoice(),'rock'))
 
