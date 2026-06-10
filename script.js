@@ -4,48 +4,63 @@ let computerScore = 0;
 const PlayerRock = document.querySelector("#rock");
 const PlayerPaper = document.querySelector("#paper");
 const PlayerScissor = document.querySelector("#scissor");
-const Scoreboard = document.querySelector("#score")
+const Scoreboard = document.querySelector("#score");
 
 
-const PlayerScoreboard = document.createElement("p")
-PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`
-Scoreboard.appendChild(PlayerScoreboard)
+const PlayerScoreboard = document.createElement("p");
+PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`;
+Scoreboard.appendChild(PlayerScoreboard);
 
-const ComputerScoreboard = document.createElement("p")
-ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`
-Scoreboard.appendChild(ComputerScoreboard)
+const ComputerScoreboard = document.createElement("p");
+ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`;
+Scoreboard.appendChild(ComputerScoreboard);
 
+const currentComputerChoice = document.createElement("p");
 
-
+function updateComputerChoice(){
+    let computerAnswerSecond = getComputerChoice();
+    currentComputerChoice.textContent = `current pick: ${computerAnswerSecond}`;
+    Scoreboard.appendChild(currentComputerChoice);
+    return computerAnswerSecond
+};
 
 PlayerRock.addEventListener("click", function (){
-    let computerAnswer = getComputerChoice()
-    console.log(computerAnswer)
-    playRound(computerAnswer, "rock")
     
-    PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`
-    ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`
+    let ComputerAnswerFunc = currentComputerChoice.textContent.slice(14);
+    console.log(ComputerAnswerFunc);
+
+    playRound(ComputerAnswerFunc, "rock");
+    PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`;
+    ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`;
+    updateComputerChoice()
 })
+
 
 PlayerPaper.addEventListener("click", function (){
-    let computerAnswer = getComputerChoice()
-    console.log(computerAnswer)
-    playRound(computerAnswer, "paper")
-    
-    PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`
-    ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`
+    let ComputerAnswerFunc = currentComputerChoice.textContent.slice(14);
+    console.log(ComputerAnswerFunc);
+
+    playRound(ComputerAnswerFunc, "paper");
+    PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`;
+    ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`;
+    updateComputerChoice();
 })
+
 
 PlayerScissor.addEventListener("click", function (){
-    let computerAnswer = getComputerChoice()
-    console.log(computerAnswer)
-    playRound(computerAnswer, "scissor")
-    
-    PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`
-    ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`
+    let ComputerAnswerFunc = currentComputerChoice.textContent.slice(14);
+    console.log(ComputerAnswerFunc);
+
+    playRound(ComputerAnswerFunc, "scissor");
+    PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`;
+    ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`;
+    updateComputerChoice();
 })
 
 
+function winner() {
+    
+}
 
 
 
@@ -111,3 +126,4 @@ function playRound(computerAnswer, humanAnswer) {
 
 
 
+updateComputerChoice()
