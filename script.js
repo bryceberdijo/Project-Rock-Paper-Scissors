@@ -5,6 +5,7 @@ const PlayerRock = document.querySelector("#rock");
 const PlayerPaper = document.querySelector("#paper");
 const PlayerScissor = document.querySelector("#scissor");
 const Scoreboard = document.querySelector("#score");
+const FinalWinner = document.querySelector("#result")
 
 
 const PlayerScoreboard = document.createElement("p");
@@ -17,12 +18,32 @@ Scoreboard.appendChild(ComputerScoreboard);
 
 const currentComputerChoice = document.createElement("p");
 
+const playerWinnerResult = document.createElement("p");
+playerWinnerResult.textContent = "Player Wins!";
+
+const computerWinnerResult = document.createElement("p");
+computerWinnerResult.textContent = "Clanker Wins!";
+
 function updateComputerChoice(){
     let computerAnswerSecond = getComputerChoice();
     currentComputerChoice.textContent = `current pick: ${computerAnswerSecond}`;
     Scoreboard.appendChild(currentComputerChoice);
     return computerAnswerSecond
 };
+
+function winnerSelector() {
+    if (playerScore >= 5) {
+        
+        FinalWinner.appendChild(playerWinnerResult);
+    }
+
+    if (computerScore >= 5) {
+        
+        FinalWinner.appendChild(computerWinnerResult);
+
+    }
+}
+
 
 PlayerRock.addEventListener("click", function (){
     
@@ -32,7 +53,8 @@ PlayerRock.addEventListener("click", function (){
     playRound(ComputerAnswerFunc, "rock");
     PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`;
     ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`;
-    updateComputerChoice()
+    updateComputerChoice();
+    winnerSelector()
 })
 
 
@@ -44,6 +66,7 @@ PlayerPaper.addEventListener("click", function (){
     PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`;
     ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`;
     updateComputerChoice();
+    winnerSelector()
 })
 
 
@@ -55,12 +78,10 @@ PlayerScissor.addEventListener("click", function (){
     PlayerScoreboard.textContent = `PlayerScore: ${playerScore}`;
     ComputerScoreboard.textContent = `ComputerScore: ${computerScore}`;
     updateComputerChoice();
+    winnerSelector()
 })
 
 
-function winner() {
-    
-}
 
 
 
