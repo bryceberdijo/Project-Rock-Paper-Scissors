@@ -5,7 +5,8 @@ const PlayerRock = document.querySelector("#rock");
 const PlayerPaper = document.querySelector("#paper");
 const PlayerScissor = document.querySelector("#scissor");
 const Scoreboard = document.querySelector("#score");
-const FinalWinner = document.querySelector("#result")
+const FinalWinner = document.querySelector("#result");
+const controlSection = document.querySelector("#control");
 
 
 const PlayerScoreboard = document.createElement("p");
@@ -33,13 +34,18 @@ function updateComputerChoice(){
 
 function winnerSelector() {
     if (playerScore >= 5) {
-        
         FinalWinner.appendChild(playerWinnerResult);
+        controlSection.removeChild(PlayerRock);
+        controlSection.removeChild(PlayerPaper);
+        controlSection.removeChild(PlayerScissor);
     }
 
     if (computerScore >= 5) {
         
         FinalWinner.appendChild(computerWinnerResult);
+        controlSection.removeChild(PlayerRock);
+        controlSection.removeChild(PlayerPaper);
+        controlSection.removeChild(PlayerScissor);
 
     }
 }
